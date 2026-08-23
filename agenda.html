@@ -20,6 +20,7 @@
     --rule: rgba(243,239,228,0.12);
   }
   *{ box-sizing:border-box; }
+  html, body{ overflow-x:hidden; max-width:100%; }
   body{
     margin:0; background:var(--bg); color:var(--ink);
     font-family:'IBM Plex Sans', sans-serif; font-weight:300; line-height:1.6;
@@ -58,7 +59,6 @@
     .nav-cta{ flex-shrink:0; padding:8px 11px; font-size:10px; }
     .nav-toggle{ flex-shrink:0; width:34px; height:32px; }
     .nav-toggle span{ width:15px; }
-    nav{ overflow-x:hidden; overflow-y:visible; }
     .nav-links{
       position:absolute; top:100%; left:0; right:0;
       flex-direction:column; gap:0; background:var(--bg-panel);
