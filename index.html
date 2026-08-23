@@ -72,7 +72,11 @@
   .nav-toggle.is-active span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
   @media (max-width:760px){
     .nav-toggle{ display:flex; }
-    .nav-inner{ flex-wrap:nowrap; }
+    .nav-inner{ flex-wrap:nowrap; gap:10px; }
+    .wordmark, .nav-wordmark{ min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:14px; }
+    .nav-cta{ flex-shrink:0; padding:9px 13px; font-size:10.5px; }
+    .nav-toggle{ flex-shrink:0; }
+    nav{ overflow-x:hidden; }
     .nav-links{
       position:absolute; top:100%; left:0; right:0;
       flex-direction:column; gap:0; background:var(--bg-panel);
