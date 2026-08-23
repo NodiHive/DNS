@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Conversations from Davos — Podcast | Davos Neurodiversity Summit</title>
+<title>About — Davos Neurodiversity Summit</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -81,19 +81,44 @@
   .partner-line{ margin-top:20px; font-size:13.5px; color:var(--ink-muted); position:relative; z-index:2; }
   .partner-line a{ color:var(--ice); }
 
-  /* EPISODES */
-  section{ padding:52px 0 80px; }
-  .episode{ border-bottom:1px solid var(--rule); padding:34px 0; }
-  .episode:first-child{ padding-top:0; }
-  .episode-meta{ display:flex; align-items:center; gap:12px; margin-bottom:10px; flex-wrap:wrap; }
-  .ep-num{ font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--gold-soft); letter-spacing:0.06em; }
-  .ep-date{ font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--ink-muted); }
-  .ep-dot{ width:3px; height:3px; background:var(--ink-muted); border-radius:50%; }
-  .episode h2{ font-family:'Fraunces', serif; font-weight:500; font-size:21px; margin:0 0 8px; line-height:1.25; color:var(--ink); }
-  .episode .guest{ font-size:14px; color:var(--ice); margin:0 0 10px; }
-  .episode p.desc{ font-size:14.5px; color:var(--ink-muted); margin:0 0 18px; max-width:62ch; }
-  .player-frame{ border:1px solid var(--rule); background:var(--bg-panel); border-radius:2px; overflow:hidden; }
-  .player-frame iframe{ display:block; width:100%; height:200px; border:0; }
+  /* ABOUT SECTIONS */
+  section{ padding:52px 0; border-bottom:1px solid var(--rule); }
+  section:last-of-type{ border-bottom:none; }
+  .kicker{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ice); margin:0 0 12px; }
+  section h2{ font-family:'Fraunces', serif; font-weight:500; font-size:clamp(22px,3.4vw,28px); margin:0 0 18px; letter-spacing:-0.01em; color:var(--ink); }
+  section p{ font-size:15.5px; color:var(--ink-muted); margin:0 0 16px; max-width:66ch; }
+  section p:last-child{ margin-bottom:0; }
+
+  .cta-row{ margin-top:28px; }
+  .btn{
+    display:inline-block; font-family:'IBM Plex Mono', monospace; font-size:12.5px;
+    letter-spacing:0.06em; text-transform:uppercase; text-decoration:none;
+    color:var(--bg); background:var(--gold-soft); padding:13px 26px; border-radius:2px;
+  }
+  .btn:hover{ background:var(--gold); }
+
+  /* FOUNDER */
+  .founder-block{ display:grid; grid-template-columns:220px 1fr; gap:36px; align-items:start; }
+  .founder-photo{
+    width:100%; aspect-ratio:3/4; background:var(--bg-panel); border:1px solid var(--rule);
+    border-radius:3px; overflow:hidden;
+  }
+  .founder-photo img{ width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+  .founder-name{ font-family:'Fraunces', serif; font-weight:500; font-size:19px; color:var(--ink); margin:0 0 4px; }
+  .founder-title{ font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--gold-soft); letter-spacing:0.04em; text-transform:uppercase; margin:0 0 18px; }
+  .founder-block p{ font-size:14.5px; }
+  .linkedin-link{ display:inline-flex; align-items:center; gap:6px; margin-top:10px; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.04em; text-transform:uppercase; }
+
+  .placeholder-note{
+    margin-top:32px; background:var(--bg-panel); border:1px solid var(--rule); border-left:2px solid var(--gold);
+    padding:14px 20px; font-size:13px; color:var(--ink-muted); max-width:66ch;
+  }
+  .placeholder-note strong{ color:var(--ink); font-weight:500; }
+
+  @media (max-width:600px){
+    .founder-block{ grid-template-columns:1fr; }
+    .founder-photo{ max-width:220px; aspect-ratio:3/4; }
+  }
 
   footer{ padding:40px 0; border-top:1px solid var(--rule); }
   .footer-inner{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px; align-items:center; max-width:1080px; margin:0 auto; padding:0 28px; }
@@ -111,10 +136,10 @@
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="nav-links" id="navLinks">
       <a href="agenda.html">Agenda</a>
-      <a href="podcast.html" class="current">Podcast</a>
+      <a href="podcast.html">Podcast</a>
       <a href="awardees.html">2026 Awardees</a>
       <a href="leadership-wall.html">Leadership Wall</a>
-      <a href="about.html">About</a>
+      <a href="about.html" class="current">About</a>
       <a href="sponsorship.html">Get Involved</a>
     </div>
     <a class="nav-cta" href="index.html#register">Register</a>
@@ -127,73 +152,46 @@
     <polyline points="0,200 0,155 130,110 250,140 360,95 460,130 590,80 700,120 820,75 930,115 1080,90 1080,200" fill="#1C2749" opacity="0.7"/>
   </svg>
   <div class="wrap">
-    <p class="eyebrow">Conversations from Davos</p>
-    <h1>Listen to the <em>conversation</em> continue.</h1>
-    <p class="page-sub">A special season of Understood.org's <em>Minds at Work</em>, recorded live alongside the Davos Neurodiversity Summit — extended, unhurried conversations with the leaders shaping this work.</p>
-    <p class="partner-line">Produced in partnership with <a href="https://www.understood.org/en/podcasts/minds-at-work" target="_blank" rel="noopener">Understood.org</a>, also available on <a href="https://open.spotify.com/show/6ahl2iEqNuTutszYR5ZR49" target="_blank" rel="noopener">Spotify</a> and <a href="https://podcasts.apple.com/us/podcast/minds-at-work-how-neurodiversity-fuels-business-and-belonging/id1819038180" target="_blank" rel="noopener">Apple Podcasts</a>.</p>
+    <p class="eyebrow">About the Summit</p>
+    <h1>A coalition built for <em>inclusive</em> progress.</h1>
+    <p class="page-sub">The story behind DNS, and the founder who convened it during World Economic Forum week.</p>
   </div>
 </header>
 
 <main class="wrap">
+
   <section>
-
-    <div class="episode">
-      <div class="episode-meta"><span class="ep-num">EP. 01</span><span class="ep-dot"></span><span class="ep-date">Feb 11, 2026 · 2 min</span></div>
-      <h2>Introducing "Conversations from Davos"</h2>
-      <p class="guest">Series introduction, hosted by Dr. Maureen Dunne</p>
-      <p class="desc">A short opening to the season — why Understood.org and DNS partnered to bring these conversations to a wider audience.</p>
-      <div class="player-frame"><iframe src="https://player.simplecast.com/cd6dc787-0391-4b55-9818-757ddff81b24?dark=false" title="Introducing Conversations from Davos" allow="autoplay" allowfullscreen loading="lazy"></iframe></div>
-    </div>
-
-    <div class="episode">
-      <div class="episode-meta"><span class="ep-num">EP. 02</span><span class="ep-dot"></span><span class="ep-date">Feb 11, 2026 · 14 min</span></div>
-      <h2>Why neurodiversity belongs on the global agenda</h2>
-      <p class="guest">Dr. Maureen Dunne on how neurodiversity earned a seat at Davos</p>
-      <p class="desc">Dr. Dunne traces how the Summit came to be, and makes the case for inclusive leadership as a global-agenda issue, not a side conversation.</p>
-      <div class="player-frame"><iframe src="https://player.simplecast.com/8cbea63a-6f5b-4009-b189-6c4f358267f7?dark=false" title="Why neurodiversity belongs on the global agenda" allow="autoplay" allowfullscreen loading="lazy"></iframe></div>
-    </div>
-
-    <div class="episode">
-      <div class="episode-meta"><span class="ep-num">EP. 03</span><span class="ep-dot"></span><span class="ep-date">Feb 11, 2026 · 17 min</span></div>
-      <h2>When leaders disclose at work</h2>
-      <p class="guest">With Martin McKay, Founder &amp; Executive Chairman, Everway</p>
-      <p class="desc">Recorded live on the DNS main stage — McKay on disclosing his dyslexia as a founder, and why leaders going public changes the whole organization.</p>
-      <div class="player-frame"><iframe src="https://player.simplecast.com/3e26f334-9e96-42b7-8b8f-acd8d82e2d00?dark=false" title="When leaders disclose at work" allow="autoplay" allowfullscreen loading="lazy"></iframe></div>
-    </div>
-
-    <div class="episode">
-      <div class="episode-meta"><span class="ep-num">EP. 04</span><span class="ep-dot"></span><span class="ep-date">Feb 25, 2026 · 28 min</span></div>
-      <h2>Advancing neurodiversity at Cornell University</h2>
-      <p class="guest">With Eve De Rosa, Dean of Faculty, Cornell University</p>
-      <p class="desc">How Cornell builds neuroinclusion into research, teaching, and campus life — for students, faculty, and staff alike.</p>
-      <div class="player-frame"><iframe src="https://player.simplecast.com/afd193cf-9396-49d5-9904-4e4a73eb874d?dark=false" title="Advancing neurodiversity at Cornell University" allow="autoplay" allowfullscreen loading="lazy"></iframe></div>
-    </div>
-
-    <div class="episode">
-      <div class="episode-meta"><span class="ep-num">EP. 05</span><span class="ep-dot"></span><span class="ep-date">Mar 4, 2026 · 28 min</span></div>
-      <h2>Moving past performative inclusion</h2>
-      <p class="guest">With Nat Lyckowski, Global Neurodiversity Advancement Leader, IBM</p>
-      <p class="desc">Practical, low-cost cultural shifts that move organizations from box-checking to measurable, lasting change.</p>
-      <div class="player-frame"><iframe src="https://player.simplecast.com/7223abbe-0896-40c8-89eb-dc83183b31e8?dark=false" title="Moving past performative inclusion" allow="autoplay" allowfullscreen loading="lazy"></iframe></div>
-    </div>
-
-    <div class="episode">
-      <div class="episode-meta"><span class="ep-num">EP. 06</span><span class="ep-dot"></span><span class="ep-date">Mar 11, 2026 · 25 min</span></div>
-      <h2>How ERGs transform culture and build empathy</h2>
-      <p class="guest">With Tristan Lavender, global neurodiversity-at-work advocate</p>
-      <p class="desc">On founding an employee resource group from the inside out, and what it takes to turn a support space into real organizational change.</p>
-      <div class="player-frame"><iframe src="https://player.simplecast.com/e43a2807-5735-46bd-b2c6-766db7cc0e4c?dark=false" title="How ERGs transform culture and build empathy" allow="autoplay" allowfullscreen loading="lazy"></iframe></div>
-    </div>
-
-    <div class="episode">
-      <div class="episode-meta"><span class="ep-num">EP. 07</span><span class="ep-dot"></span><span class="ep-date">Mar 18, 2026 · 28 min</span></div>
-      <h2>Who owns your brain data and neural privacy</h2>
-      <p class="guest">With Stephen Damianos, Executive Director, Neurorights Foundation</p>
-      <p class="desc">Consumer neurotechnology is moving fast — this conversation covers what neural data reveals, who's collecting it, and the policy fight to protect it.</p>
-      <div class="player-frame"><iframe src="https://player.simplecast.com/79299ece-0981-4006-99ae-e7153c93035c?dark=false" title="Who owns your brain data and neural privacy" allow="autoplay" allowfullscreen loading="lazy"></iframe></div>
-    </div>
-
+    <p class="kicker">Our Purpose</p>
+    <h2>A unique perspective at the World Economic Forum.</h2>
+    <p>The Davos Neurodiversity Summit (DNS) provides a distinct perspective during the World Economic Forum, representing the diverse neurominority global community. Through engaging discussions, DNS advocates for inclusivity and innovation that leverages the creativity and resilience of neurodistinct individuals.</p>
   </section>
+
+  <section>
+    <p class="kicker">Who We Are</p>
+    <h2>A global coalition dedicated to creating inclusive progress.</h2>
+    <p>DNS is a coalition of neurodistinct leaders and influencers that convenes annually during the World Economic Forum to amplify the many voices of the neurodiversity community, representing nearly 1 in 5 people worldwide. The mission of DNS is to bring a unique and vital perspective to the forum's major themes, offering insights shaped by diverse ways of thinking and problem-solving.</p>
+    <p>By engaging in discussion and commentary, DNS works to ensure that global strategies for economic, social, and technological progress are inclusive and equitable — reflecting the strengths and needs of a neurodiverse world. Through its contributions, the coalition challenges traditional paradigms, advocating for innovation that values and leverages the inherent creativity and resilience within the neurodivergent population.</p>
+    <div class="cta-row">
+      <a class="btn" href="index.html#register">Register for DNS 2027</a>
+    </div>
+  </section>
+
+  <section>
+    <p class="kicker">Founder</p>
+    <h2>Founded by Dr. Maureen Dunne</h2>
+    <div class="founder-block">
+      <div class="founder-photo"><img src="maureen-dunne.png" alt="Dr. Maureen Dunne"></div>
+      <div>
+        <p class="founder-name">Dr. Maureen Dunne</p>
+        <p class="founder-title">Founder, Davos Neurodiversity Summit</p>
+        <p>Dr. Dunne founded the Davos Neurodiversity Summit during World Economic Forum week, seeing the need to empower global leaders to shape the future WEF agenda by including neurodivergent voices. She is the author of the international bestselling and award-winning book <em>The Neurodiversity Edge</em>.</p>
+        <p>Dr. Dunne is also a global keynote speaker and leader who has served as a senior adviser and lead trainer to some of the world's top brands, Fortune 500 companies, educational institutions, philanthropic foundations, funds, and government officials. Her work has been featured in outlets including Armchair Expert with Dax Shepard, Harper's Bazaar, MIT Sloan Management Review, Fast Company, Inside Higher Ed, Forbes, Bloomberg, and Big Think. She earned her doctorate from the University of Oxford as a Rhodes Scholar.</p>
+        <a class="linkedin-link" href="https://www.linkedin.com/in/maureen-n-dunne-ph-d-a2609a45/" target="_blank" rel="noopener">Follow on LinkedIn →</a>
+      </div>
+    </div>
+    <div class="placeholder-note"><strong>Placeholder content:</strong> this bio is carried over as-is from the current site and is expected to be updated.</div>
+  </section>
+
 </main>
 
 <footer>
