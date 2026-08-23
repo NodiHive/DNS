@@ -93,7 +93,9 @@
   .section-head p{ color:var(--ink-muted); margin:0; font-size:15.5px; }
 
   /* TRACKS GRID (reuses explore-grid idiom) */
-  .track-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule); }
+  .track-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:var(--rule); border:1px solid var(--rule); }
+  @media (max-width:760px){ .track-grid{ grid-template-columns:repeat(2, 1fr); } }
+  @media (max-width:480px){ .track-grid{ grid-template-columns:1fr; } }
   .track-card{ background:var(--bg-panel); padding:26px 24px; }
   .track-card .tag{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--ice); margin:0 0 10px; }
   .track-card h4{ font-family:'Fraunces', serif; font-weight:500; font-size:17px; color:var(--ink); margin:0 0 8px; }
